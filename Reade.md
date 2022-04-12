@@ -20,7 +20,7 @@
 ```
   ionic cordova build android --release
   ionic cordova build android --prod --release --packageType=apk
-```
+``` 
 
 * Se realiza la firma de la apk
 ```
