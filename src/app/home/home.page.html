@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lectura de cedula
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-button (click)="scan()" expand="block" shape="round">
+    Leer Code Cedula
+  </ion-button>
+      <div *ngIf="scanData">
+          <p>Numero Documento: {{ personalData.numeroCedula }}</p>
+          <p>Primer Apellido: {{ personalData.primerApellido }}</p>
+          <p>Segundo Apellido: {{ personalData.segundoApellido }}</p>
+          <p>Primer Nombre: {{ personalData.primerNombre }}</p>
+          <p>Segundo Nombre: {{ personalData.segundoNombre }}</p>
+          <p>sexo: {{ personalData.sexo }}</p>
+          <p>Fecha Nacimiento: {{ personalData.fechaNacimiento }}</p>
+          <p>G.S RH: {{ personalData.rh }}</p>
+          <p>Nombre Completo: {{ personalData.nombreCompleto }}</p>
+      </div>
+
+</ion-content>

@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color="codensa">
+    <ion-title class="title">Crédito Fácil CODENSA</ion-title>
+    <ion-button id="nested-button" slot="end" fill="clear">
+      <ion-icon slot="start" name="menu" color="light"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-button (click)="paso1TomarFoto()" expand="block" class="textos">
+    <ion-icon  slot="start" name="next"></ion-icon>
+    Paso 1: Toma foto cara (1) del documento
+  </ion-button>
+  <br>
+
+  <ion-button (click)="paso2TomarFoto()" expand="block" disabled={{paso2}} class="textos">
+    <ion-icon  slot="start" name="next"></ion-icon>
+    Paso 2: Toma foto cara (2) del documento
+  </ion-button>
+  <br>
+
+  <ion-button (click)="paso3TomarFoto()" expand="block" disabled={{paso3}} class="textos">
+    <ion-icon  slot="start" name="next"></ion-icon>
+    Paso 3: Toma foto documento autorización
+  </ion-button>
+
+  <!--<br>
+   <ion-button (click)="scanearDocumento()" expand="block" disabled={{paso4}} class="textos">
+    <ion-icon  slot="start" name="next"></ion-icon>
+    Paso 4: Escanear código de barras
+  </ion-button> -->
+
+  <div *ngIf="scanData.numeroCedula === '' && !paso5">
+    <br>
+    <ion-button  (click)="leerDatos()" expand="block" class="textos">
+      <ion-icon  slot="start" name="read"></ion-icon>
+      Leer los datos del documento nuevamente
+    </ion-button>
+  </div>
+
+
+  <br>
+  <ion-button (click)="enviarDatos()" expand="block" disabled={{paso5}} class="textos">
+    <ion-icon  slot="start" name="next"></ion-icon>
+    Paso 4: Guardar información
+  </ion-button>
+
+  <ion-card>
+    <ion-card-content *ngIf="scanData.numeroCedula !== ''">
+      <p>Numero Documento: {{ scanData.numeroCedula }}</p>
+      <p>Nombres: {{ scanData.primerApellido + ' ' + scanData.segundoApellido}}</p>
+      <p>Apellidos: {{ scanData.primerNombre + ' ' + scanData.segundoNombre }}</p>
+      <!--
+      <p>Numero Documento: {{ scanData.numeroCedula }}</p>
+      <p>Primer Apellido: {{ scanData.primerApellido }}</p>
+      <p>Segundo Apellido: {{ scanData.segundoApellido }}</p>
+      <p>Primer Nombre: {{ scanData.primerNombre }}</p>
+      <p>Segundo Nombre: {{ scanData.segundoNombre }}</p>
+      <p>sexo: {{ scanData.sexo }}</p>
+      <p>G.S RH: {{ scanData.rh }}</p>
+      <p>Fecha Nacimiento: {{ scanData.fechaNacimiento }}</p>
+      <p>Ciudad Nacimiento: {{ scanData.ciudadnac }}</p>
+      <p>Departamento: {{ scanData.depatamentonac }}</p>
+      <p>Fecha de expedición: {{ scanData.fechaexp }}</p>
+      <p>Ciudad: {{ scanData.ciudadexp }}</p>
+    -->
+    </ion-card-content>
+
+    <ion-card-header>
+      <img *ngIf="imgFront"     [src]="imgFront" width="350" height="200">
+      <img *ngIf="imgBack"      [src]="imgBack" width="350" height="200">
+      <img *ngIf="imgDocumento" [src]="imgDocumento" width="250" height="350" >
+    </ion-card-header>
+
+  </ion-card>
+
+
+
+  <ion-popover trigger="nested-button" [dismissOnSelect]="true">
+    <ng-template>
+      <ion-content>
+        <ion-list>
+          <ion-item [button]="true" [detail]="false" (click)="reiniciarForm()">
+            <ion-icon name="trash" color="codensa" slot="end"></ion-icon>
+            <ion-label>Limpiar</ion-label>
+          </ion-item>
+          <ion-item [button]="true" [detail]="false" (click)="logOut()">
+            <ion-icon name="log-out" color="codensa" slot="end"></ion-icon>
+            <ion-label>Cerrar Sesión</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-title style="font-size: 12px;">CRC OUTSOURCING © 2022 All rights reserved</ion-title>
+  </ion-toolbar>
+</ion-footer>

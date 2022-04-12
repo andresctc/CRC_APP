@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "166ac160-41cd-4d09-8426-5e309a9a998b",
+		"name": "WS TABLE LOCAL EXTERNO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login APP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"carango\",\r\n    \"clave\": \"Crc201903*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://181.49.239.2:9099/ktiaws/v3/tableta/login/",
+					"protocol": "http",
+					"host": [
+						"181",
+						"49",
+						"239",
+						"2"
+					],
+					"port": "9099",
+					"path": [
+						"ktiaws",
+						"v3",
+						"tableta",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Datos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"documento\": \"590764\",\r\n    \"nombre1\": \"rodolfo\",\r\n    \"nombre2\": \"enrique\",\r\n    \"apellido1\": \"torrealba\",\r\n    \"apellido2\": \"vallejo\",\r\n    \"sexo\": \"M\",\r\n    \"gruposang\": \"O+\",\r\n    \"fechanac\": \"19780817\",\r\n    \"ciudadnac\": \"\",\r\n    \"depatamentonac\": \"\",\r\n    \"fechaexp\": \"\",\r\n    \"ciudadexp\": \"\",\r\n    \"nombreimage\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://181.49.239.2:9099/ktiaws/v3/tableta/datos/",
+					"protocol": "http",
+					"host": [
+						"181",
+						"49",
+						"239",
+						"2"
+					],
+					"port": "9099",
+					"path": [
+						"ktiaws",
+						"v3",
+						"tableta",
+						"datos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Conexion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://181.49.239.2:9099/ktiaws/hello/hello",
+					"protocol": "http",
+					"host": [
+						"181",
+						"49",
+						"239",
+						"2"
+					],
+					"port": "9099",
+					"path": [
+						"ktiaws",
+						"hello",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

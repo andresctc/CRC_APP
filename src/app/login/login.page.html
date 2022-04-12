@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar color="codensa">
+    <ion-title>App Pre-Filtro</ion-title>
+    <ion-button slot="end" fill="clear" id="acercaDe">
+      <ion-icon slot="icon-only" name="information-circle" color="light"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <br/>
+  <ion-card>
+    <br/>
+    <ion-card-header>
+      <ion-img src="..\..\assets\img\CreditoFacilCodensa.jpeg"></ion-img>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item lines="full">
+        <ion-label position="floating" class="textos">Usuario:</ion-label>
+        <ion-input type="text" required [(ngModel)]="objLogin.usuario" class="textos"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating" class="textos">Password:</ion-label>
+        <ion-input type="password" required [(ngModel)]="objLogin.clave" class="textos"></ion-input>
+      </ion-item>
+      <ion-item lines="none"></ion-item>
+      <ion-button color="codensa" expand="block" (click)="iniciarSesion()" class="textos">
+        <ion-icon slot="start" name="people"></ion-icon>
+        Ingresar
+      </ion-button>
+      <br/><br/>
+      <ion-item class="ion-text-center" lines="none">
+        <ion-label color="dark"> <b>APP Versión : {{ appVersion }}</b></ion-label>
+      </ion-item>
+      <!-- <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a> -->
+    </ion-card-content>
+
+  </ion-card>
+  <br/><br/>
+
+
+
+
+  <ion-popover trigger="acercaDe" [dismissOnSelect]="true">
+    <ng-template>
+      <ion-content style="width: 345px;">
+        <ion-item [button]="true" [detail]="false" lines="none">
+          <ion-label>Desarrollado por: </ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false">
+          <ion-label style="font-size: 14px;"><b>LordDenihol</b>(Ing. Daniel Salamanca)</ion-label>
+        </ion-item>
+
+        <ion-item [button]="true" [detail]="false">
+          <ion-label style="font-size: 14px;">Ing. Andrés Torres</ion-label>
+        </ion-item>
+
+        <ion-item [button]="true" [detail]="false" lines="none" class="ion-text-center" style=" margin-left: -70px">
+          <ion-label style="font-size: 14px; margin-left: -30px;"><b>CRC OUTSOURCING</b></ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false" style="margin-top: -18px; margin-left: -80px" class="ion-text-center" >
+          <ion-label style="font-size: 14px; ">© 2022 All rights reserved</ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false" lines="none" class="ion-text-center" style=" margin-left: -70px">
+          <ion-label style="font-size: 14px; margin-left: -30px;">APP Versión: {{appVersion}}</ion-label>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark" >
+    <ion-title style="font-size: 14px;">CRC OUTSOURCING © 2022 All rights reserved</ion-title>
+  </ion-toolbar>
+</ion-footer>
