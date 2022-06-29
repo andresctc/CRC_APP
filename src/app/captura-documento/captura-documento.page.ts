@@ -39,7 +39,7 @@ export class CapturaDocumentoPage implements OnInit, OnDestroy {
     storeToFile: false,
     camera: 'rear',
     disableExifHeaderStripping: false,
-    alpha: 1
+    alpha: 1,
   };
 
   constructor(
@@ -203,5 +203,11 @@ export class CapturaDocumentoPage implements OnInit, OnDestroy {
     // console.log(this.flashMode);
     this.changeFlashMode();
   }
+
+  //======================================
+
+
+
+
 
 }

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="codensa">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Crédito Fácil CODENSA</ion-title>
+    <ion-button id="nested-button" slot="end" fill="clear">
+      <ion-icon slot="start" name="menu" color="light"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="padre">
+    <img [src]="imagen" [width]="width" [height]="height" alt="img">
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button color="codensa" (click)="irTomarFoto()" expand="full" fill="solid" class="textos">
+      Continuar...
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

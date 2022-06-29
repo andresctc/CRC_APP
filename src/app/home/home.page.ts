@@ -1,7 +1,8 @@
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 
 import { Component } from '@angular/core';
-import { BarcodeScanner ,BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
 import { formatDate } from '@angular/common';
+import { BarcodeScanner ,BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
 
 
 
@@ -28,15 +29,16 @@ export class HomePage {
     nombreCompleto: '',
   };
 
-
   picture: any;
 
   constructor(
-    private barcodeScanner: BarcodeScanner
+    private barcodeScanner: BarcodeScanner,
+    private screenOrientation: ScreenOrientation
     ) {
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
 
-  scan(){
+  scan() {
       this.options = {
           prompt : 'Leer Cedúla',
           preferFrontCamera : false, // iOS and Android
@@ -63,9 +65,9 @@ export class HomePage {
 
 
   // Metodo para extrar los datos del documento escaneado
+  // Expresión regular
   extraerDatosDocumentos(data) {
     const dataArray = data.replace(/[^A-Za-z0-9+]+/g, ' ').split(' ');
-
     let indexMod = 0;
     let numeroCedula;
     let primerApellido;

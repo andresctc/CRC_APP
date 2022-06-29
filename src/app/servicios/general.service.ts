@@ -70,17 +70,17 @@ export class GeneralService {
     //console.log(body);
     const path = `${environment.pathHost}${urlRoute}`;
     // console.log(path);
-    const vHeaders = {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      Authorization: 'Bearer '  + this.utils.tokenID
-    };
+    // const vHeaders = {
+    //   // eslint-disable-next-line @typescript-eslint/naming-convention
+    //   Authorization: 'Bearer '  + this.utils.tokenID
+    // };
 
-    if(cabez) {
-      return this.http.post<any>(path, body,{headers: vHeaders});
-    } else {
-      return this.http.post<any>(path, body);
-    }
-    // return this.http.post<any>(path, body);
+    // if(cabez) {
+    //   return this.http.post<any>(path, body,{headers: vHeaders});
+    // } else {
+    //   return this.http.post<any>(path, body);
+    // }
+    return this.http.post<any>(path, body);
   }
 
   /**

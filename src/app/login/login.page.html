@@ -21,7 +21,8 @@
       </ion-item>
       <ion-item lines="full">
         <ion-label position="floating" class="textos">Password:</ion-label>
-        <ion-input type="password" required [(ngModel)]="objLogin.clave" class="textos"></ion-input>
+        <ion-input type="password" required [(ngModel)]="objLogin.clave" class="textos" [type]="passwordType" autosize></ion-input>
+        <ion-icon name="eye" slot="end" [color]="passwordShown === true ? 'dark' : 'medium'" (click)="verPassword()"></ion-icon>
       </ion-item>
       <ion-item lines="none"></ion-item>
       <ion-button color="codensa" expand="block" (click)="iniciarSesion()" class="textos">
@@ -32,7 +33,6 @@
       <ion-item class="ion-text-center" lines="none">
         <ion-label color="dark"> <b>APP Versión : {{ appVersion }}</b></ion-label>
       </ion-item>
-      <!-- <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a> -->
     </ion-card-content>
 
   </ion-card>

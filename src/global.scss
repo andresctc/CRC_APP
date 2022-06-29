@@ -25,7 +25,25 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-
 .custom-ion-content{
   --background:transparent;
 }
+
+
+ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+  ion-button {
+    height: 2em;
+  }
+
+}
+

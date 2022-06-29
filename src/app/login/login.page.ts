@@ -19,10 +19,13 @@ import { ModalController } from '@ionic/angular';
 export class LoginPage implements OnInit {
 
   objLogin = {
-    usuario: 'carango',
-    clave: 'Crc201902*'
+    usuario: '',
+    clave: ''
   };
   appVersion = environment.appversion;
+  passwordType = 'password';
+  passwordShown =  false;
+
 
   constructor(
     private general: GeneralService,
@@ -35,14 +38,25 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    // console;
+  }
+
+  verPassword() {
+    if (this.passwordShown) {
+      this.passwordShown = false;
+      this.passwordType = 'password';
+    } else {
+      this.passwordShown = true;
+      this.passwordType = 'text';
+    }
 
   }
 
+
   ionViewWillEnter() {
     this.cameraPreview.hide();
-    // this.objLogin.usuario = '';
-    // this.objLogin.clave = '';
+    // this.objLogin.usuario = 'carango';
+    // this.objLogin.clave = 'Crc201902*';
   }
 
   iniciarSesion() {

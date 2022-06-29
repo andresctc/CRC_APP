@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  pathHost: 'http://181.49.239.2:9099/ktiaws/v3/',
+  appversion: '1.0.9'
 };
 
 /*

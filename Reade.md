@@ -20,7 +20,7 @@
 ```
   ionic cordova build android --release
   ionic cordova build android --prod --release --packageType=apk
-``` 
+```
 
 * Se realiza la firma de la apk
 ```
@@ -83,6 +83,7 @@ ionic generate page Menu
 ionic generate s servicios/general 
 ionic generate s servicios/utilitarios
 ionic generate s servicios/authGuard
+ionic generate page imgPaso
 
 ionic generate interface interfaces/DatosEscaner
 ionic generate interface interfaces/FotosDocumento
